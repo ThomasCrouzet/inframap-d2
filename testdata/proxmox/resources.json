@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "id": "qemu/100",
+      "type": "qemu",
+      "node": "pve1",
+      "vmid": 100,
+      "name": "ubuntu-server",
+      "status": "running",
+      "cpu": 0.05,
+      "maxcpu": 2,
+      "mem": 2147483648,
+      "maxmem": 4294967296
+    },
+    {
+      "id": "qemu/101",
+      "type": "qemu",
+      "node": "pve1",
+      "vmid": 101,
+      "name": "docker-host",
+      "status": "running",
+      "cpu": 0.12,
+      "maxcpu": 4,
+      "mem": 4294967296,
+      "maxmem": 8589934592
+    },
+    {
+      "id": "lxc/200",
+      "type": "lxc",
+      "node": "pve1",
+      "vmid": 200,
+      "name": "pihole",
+      "status": "running",
+      "cpu": 0.01,
+      "maxcpu": 1,
+      "mem": 134217728,
+      "maxmem": 536870912
+    },
+    {
+      "id": "qemu/102",
+      "type": "qemu",
+      "node": "pve2",
+      "vmid": 102,
+      "name": "truenas",
+      "status": "running",
+      "cpu": 0.03,
+      "maxcpu": 2,
+      "mem": 8589934592,
+      "maxmem": 17179869184
+    },
+    {
+      "id": "qemu/103",
+      "type": "qemu",
+      "node": "pve2",
+      "vmid": 103,
+      "name": "windows-desktop",
+      "status": "stopped",
+      "cpu": 0,
+      "maxcpu": 4,
+      "mem": 0,
+      "maxmem": 8589934592
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+[
+  {
+    "Id": "abc123",
+    "Names": ["/traefik"],
+    "Image": "traefik:v3.0",
+    "State": "running",
+    "Ports": [
+      {"PrivatePort": 80, "PublicPort": 80, "Type": "tcp"},
+      {"PrivatePort": 443, "PublicPort": 443, "Type": "tcp"}
+    ],
+    "Labels": {
+      "com.docker.compose.project": "proxy"
+    }
+  },
+  {
+    "Id": "def456",
+    "Names": ["/jellyfin"],
+    "Image": "jellyfin/jellyfin:latest",
+    "State": "running",
+    "Ports": [
+      {"PrivatePort": 8096, "PublicPort": 8096, "Type": "tcp"}
+    ],
+    "Labels": {
+      "com.docker.compose.project": "media"
+    }
+  },
+  {
+    "Id": "ghi789",
+    "Names": ["/radarr"],
+    "Image": "linuxserver/radarr:latest",
+    "State": "running",
+    "Ports": [
+      {"PrivatePort": 7878, "PublicPort": 7878, "Type": "tcp"}
+    ],
+    "Labels": {
+      "com.docker.compose.project": "media"
+    }
+  },
+  {
+    "Id": "jkl012",
+    "Names": ["/postgres"],
+    "Image": "postgres:16-alpine",
+    "State": "running",
+    "Ports": [
+      {"PrivatePort": 5432, "PublicPort": 5432, "Type": "tcp"}
+    ],
+    "Labels": {
+      "com.docker.compose.project": "databases"
+    }
+  },
+  {
+    "Id": "mno345",
+    "Names": ["/stopped-app"],
+    "Image": "myapp:latest",
+    "State": "exited",
+    "Ports": [],
+    "Labels": {}
+  }
+]

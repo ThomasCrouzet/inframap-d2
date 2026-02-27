@@ -1,0 +1,7 @@
+---
+timezone: Europe/Paris
+locale: en_US.UTF-8
+admin_user: deploy
+netdata_port: 19999
+cockpit_port: 9090
+ssh_port: 22
