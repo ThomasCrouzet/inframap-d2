@@ -35,3 +35,4 @@ jobs:
         with:
           version: v2.1.6
           install-mode: goinstall
+          only-new-issues: true
