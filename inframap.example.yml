@@ -1,0 +1,52 @@
+# inframap-d2 configuration example
+# Copy this file to inframap.yml and adjust paths to your infrastructure
+#
+# Secrets can be set via environment variables instead of this file:
+#   INFRAMAP_PORTAINER_API_KEY    — Portainer API key
+#   INFRAMAP_PROXMOX_TOKEN_ID     — Proxmox API token ID
+#   INFRAMAP_PROXMOX_TOKEN        — Proxmox API token secret
+
+output: infrastructure.d2
+layout: dagre
+direction: right
+theme: default
+
+sources:
+  # Ansible inventory (optional)
+  ansible:
+    inventory: ./inventory/hosts.yml
+    group_vars: ./inventory/group_vars
+    primary_group: tailnet  # Group to use as primary server source
+
+  # Docker Compose files
+  compose:
+    # Explicit files with server mapping
+    files:
+      - path: ./roles/docker_services/templates/uptime-kuma/docker-compose.yml.j2
+        server: atlas
+        template: true  # Jinja2 template — {{ vars }} will be stripped
+      - path: ./roles/docker_services/templates/it-tools/docker-compose.yml.j2
+        server: atlas
+        template: true
+      - path: ./roles/docker_services/templates/stirling-pdf/docker-compose.yml.j2
+        server: atlas
+        template: true
+      - path: ./roles/docker_services/templates/voidink-sync/docker-compose.yml.j2
+        server: atlas
+        template: true
+
+    # Directory scanning — recursively finds docker-compose.yml files
+    scan_dirs:
+      - path: ~/docker
+        server: homelab  # All compose files in this dir belong to this server
+
+  # Tailscale network (optional)
+  tailscale:
+    enabled: true
+    # json_file: ./tailscale-status.json  # Use file instead of live `tailscale status --json`
+    include_offline: false
+
+display:
+  show_devices: true     # Show non-server Tailscale peers (phones, laptops)
+  show_volumes: false    # Show volume mounts in diagram
+  group_by: category     # Group services by category on local hosts (media, infra, etc.)

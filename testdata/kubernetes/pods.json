@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "metadata": {
+        "name": "nginx-deployment-abc123",
+        "namespace": "default",
+        "labels": {
+          "app": "nginx"
+        },
+        "ownerReferences": [
+          {"kind": "ReplicaSet", "name": "nginx-deployment-abc"}
+        ]
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "nginx",
+            "image": "nginx:1.25",
+            "ports": [
+              {"containerPort": 80, "protocol": "TCP"}
+            ]
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "metadata": {
+        "name": "postgres-0",
+        "namespace": "default",
+        "labels": {
+          "app": "postgres"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "postgres",
+            "image": "postgres:16-alpine",
+            "ports": [
+              {"containerPort": 5432, "protocol": "TCP"}
+            ]
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running"
+      }
+    },
+    {
+      "metadata": {
+        "name": "grafana-xyz789",
+        "namespace": "monitoring",
+        "labels": {
+          "app": "grafana"
+        }
+      },
+      "spec": {
+        "containers": [
+          {
+            "name": "grafana",
+            "image": "grafana/grafana:10.0",
+            "ports": [
+              {"containerPort": 3000, "protocol": "TCP"}
+            ]
+          }
+        ]
+      },
+      "status": {
+        "phase": "Running"
+      }
+    }
+  ]
+}

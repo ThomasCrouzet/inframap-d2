@@ -1,0 +1,13 @@
+services:
+  stirling-pdf:
+    image: stirlingtools/stirling-pdf:latest
+    restart: unless-stopped
+    ports:
+      - "{{ docker_services_tailscale_ip }}:7200:8080"
+    volumes:
+      - stirling-data:/usr/share/tessdata
+    environment:
+      DOCKER_ENABLE_SECURITY: "false"
+
+volumes:
+  stirling-data:
