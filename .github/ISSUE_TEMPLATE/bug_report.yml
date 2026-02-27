@@ -1,0 +1,59 @@
+name: Bug Report
+description: Report a bug in inframap-d2
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What happened? What did you expect instead?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Minimal steps to reproduce the issue.
+      placeholder: |
+        1. Run `inframap-d2 generate -o infra.d2`
+        2. ...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `inframap-d2 version`
+      placeholder: "v0.1.0 (commit: abc1234, built: 2026-02-27)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: OS
+      options:
+        - Linux (amd64)
+        - Linux (arm64)
+        - macOS (Apple Silicon)
+        - macOS (Intel)
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Config (inframap.yml)
+      description: >
+        Relevant parts of your config. **Please anonymize** hostnames, IPs,
+        and paths before pasting.
+      render: yaml
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output / error logs
+      render: text
