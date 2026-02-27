@@ -1,0 +1,64 @@
+{
+  "Self": {
+    "HostName": "minicore",
+    "DNSName": "minicore.tail12345.ts.net.",
+    "OS": "macOS",
+    "TailscaleIPs": ["100.64.0.1"],
+    "Online": true,
+    "Tags": null
+  },
+  "Peer": {
+    "nodekey:abc123": {
+      "HostName": "gateway",
+      "DNSName": "gateway.tail12345.ts.net.",
+      "OS": "linux",
+      "TailscaleIPs": ["100.64.0.2"],
+      "Online": true,
+      "Tags": ["tag:server"]
+    },
+    "nodekey:def456": {
+      "HostName": "atlas",
+      "DNSName": "atlas.tail12345.ts.net.",
+      "OS": "linux",
+      "TailscaleIPs": ["100.64.0.3"],
+      "Online": true,
+      "Tags": ["tag:server"]
+    },
+    "nodekey:ghi789": {
+      "HostName": "nexus",
+      "DNSName": "nexus.tail12345.ts.net.",
+      "OS": "linux",
+      "TailscaleIPs": ["100.64.0.4"],
+      "Online": true,
+      "Tags": ["tag:server"]
+    },
+    "nodekey:jkl012": {
+      "HostName": "user-phone",
+      "DNSName": "user-phone.tail12345.ts.net.",
+      "OS": "iOS",
+      "TailscaleIPs": ["100.64.0.10"],
+      "Online": true,
+      "Tags": null
+    },
+    "nodekey:mno345": {
+      "HostName": "homeassistant",
+      "DNSName": "homeassistant.tail12345.ts.net.",
+      "OS": "linux",
+      "TailscaleIPs": ["100.64.0.20"],
+      "Online": true,
+      "Tags": null
+    },
+    "nodekey:pqr678": {
+      "HostName": "offline-laptop",
+      "DNSName": "offline-laptop.tail12345.ts.net.",
+      "OS": "windows",
+      "TailscaleIPs": ["100.64.0.30"],
+      "Online": false,
+      "Tags": null
+    }
+  },
+  "MagicDNSSuffix": "tail12345.ts.net",
+  "CurrentTailnet": {
+    "Name": "user@example"
+  }
+}

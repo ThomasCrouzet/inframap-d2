@@ -1,0 +1,26 @@
+---
+ansible_user: deploy
+ansible_become: true
+
+service_health_checks:
+  uptime-kuma:
+    port: 3001
+    path: "/"
+    expected_status: 200
+  it-tools:
+    port: 7100
+    path: "/"
+    expected_status: 200
+  stirling-pdf:
+    port: 7200
+    path: "/"
+    expected_status: 200
+  galerie-nightlysparks:
+    port: 3000
+    path: "/api/health"
+    expected_status: 200
+    timeout: 10
+  voidink-sync:
+    port: 4444
+    path: "/health"
+    expected_status: 200

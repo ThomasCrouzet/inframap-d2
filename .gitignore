@@ -1,0 +1,30 @@
+# Binary
+inframap-d2
+dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test output
+*.d2.tmp
+coverage.out
+
+# Config (user-specific)
+inframap.yml
+
+# Generated output
+infrastructure.*
+
+# Demo output
+demo.d2
+demo.svg
+
+# Local AI config
+CLAUDE.md

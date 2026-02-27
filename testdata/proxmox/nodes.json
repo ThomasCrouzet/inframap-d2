@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "node": "pve1",
+      "status": "online",
+      "cpu": 0.15,
+      "maxcpu": 8,
+      "mem": 8589934592,
+      "maxmem": 34359738368
+    },
+    {
+      "node": "pve2",
+      "status": "online",
+      "cpu": 0.08,
+      "maxcpu": 4,
+      "mem": 4294967296,
+      "maxmem": 16777216000
+    }
+  ]
+}

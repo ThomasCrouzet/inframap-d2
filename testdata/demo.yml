@@ -1,0 +1,29 @@
+# Demo configuration — uses bundled testdata
+# Run from project root: ./inframap-d2 generate -c testdata/demo.yml -o demo.d2
+
+output: demo.d2
+direction: right
+
+sources:
+  ansible:
+    inventory: ./testdata/ansible/hosts.yml
+    group_vars: ./testdata/ansible/group_vars
+    primary_group: tailnet
+
+  compose:
+    files:
+      - path: ./testdata/compose/docker-compose.yml
+        server: atlas
+      - path: ./testdata/compose/template.yml.j2
+        server: atlas
+        template: true
+
+  tailscale:
+    enabled: true
+    json_file: ./testdata/tailscale/status.json
+    include_offline: false
+
+display:
+  show_devices: true
+  show_volumes: false
+  group_by: category

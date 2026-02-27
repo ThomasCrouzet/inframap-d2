@@ -1,0 +1,44 @@
+[
+  {
+    "unit": "docker.service",
+    "load": "loaded",
+    "active": "active",
+    "sub": "running",
+    "description": "Docker Application Container Engine"
+  },
+  {
+    "unit": "nginx.service",
+    "load": "loaded",
+    "active": "active",
+    "sub": "running",
+    "description": "A high performance web server"
+  },
+  {
+    "unit": "sshd.service",
+    "load": "loaded",
+    "active": "active",
+    "sub": "running",
+    "description": "OpenBSD Secure Shell server"
+  },
+  {
+    "unit": "postgresql.service",
+    "load": "loaded",
+    "active": "active",
+    "sub": "running",
+    "description": "PostgreSQL RDBMS"
+  },
+  {
+    "unit": "cron.service",
+    "load": "loaded",
+    "active": "active",
+    "sub": "running",
+    "description": "Regular background program processing daemon"
+  },
+  {
+    "unit": "networkd.service",
+    "load": "loaded",
+    "active": "active",
+    "sub": "running",
+    "description": "Network Configuration"
+  }
+]
